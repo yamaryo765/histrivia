@@ -1,24 +1,55 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### アプリケーション名
+histrivia
 
-Things you may want to cover:
+### 概要
+歴史に苦手意識を持つ学生や、歴史の面白さを知らない人向けの歴史雑学記事投稿アプリです。
+ユーザーを管理し記事の投稿、編集、削除が可能で、記事にコメントを残すことも可能です。
 
-* Ruby version
+### URL
 
-* System dependencies
+### テスト用アカウント
 
-* Configuration
+### 利用方法
 
-* Database creation
+### 目指した課題解決
 
-* Database initialization
+### 洗い出した要件
 
-* How to run the test suite
+### 実装した機能についてのGIFと説明
 
-* Services (job queues, cache servers, search engines, etc.)
+### 実装予定の機能
 
-* Deployment instructions
+### テーブル設計
 
-* ...
+## usersテーブル
+
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| name     | string | null: false |
+| email    | string | null: false |
+| password | string | null: false |
+| nickname | string | null: false |
+
+
+## articleテーブル
+
+| Column | Type       |    Options                         |
+| ------ | ---------- | ---------------------------------- |
+| title  | string     | null: false                        |
+| text   | text       | null: false                        |
+| user   | references | null: false, foreign_key: true     | 
+
+
+
+## messagesテーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| content | string     |                                |
+| user    | references | null: false, foreign_key: true |
+| article | references | null: false, foreign_key: true |
+
+
+### ローカルでの動作方法

@@ -1,2 +1,17 @@
 <%= render 'shared/herder' %>
 
+<div class= 'web_description'>
+    新着記事一覧
+</div>
+<div class= 'contents'>
+  <% @articles.each do |article| %>
+    <div class="contents row">
+      <%= article.image %>
+      <p><%= article.text %></p>
+        <%= article.title %>
+    </div>
+  <% end %>
+</div>
+</div>
+
+
